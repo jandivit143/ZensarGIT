@@ -1,0 +1,54 @@
+=> to initiate a git repo: git init
+=> to know the status: git status
+=> to add a file to staging area: git add <filename>
+=> to add all files to staging area: git add .
+=> to add one particular extension files: git add *.java (or) *.js (or) *.html
+=> to remove a file from the staging area: git rm --cached <filename>
+=> to commit the changes: git commit -m "first html file"
+=> to remove the new changes from the file which is in working directory: git restore <file>
+=> to get the commit logs: git log
+=> to ignore unwanted files, we create a file naming '.gitignore' and add the extensions of files which
+   needed to be ignored
+=> to get one lined logs: git log --pretty=oneline
+=> to set aliases for the git commands, go to user profile directory and create a file naming '.gitconfig'.
+   Check the file '.gitconfig' in AC66868 user from C disk
+=> after the changes we made in working directory, we don't want the changes and want to get the original
+   state of a file, we use the cmd: git checkout <filename>
+   Note: git checkout <filename> only works for untracked files
+=> after adding a file to the staging state, to unstage it: git reset
+=> to revert a commit: git revert <commitid>
+=> to create a branch: git branch <branchname>
+=> to check in which branch you are: git branch
+=> to switch in b/w branches: git checkout <branchname>
+=> to create a branch and move to it: git checkout -b <branchname>
+=> to delete a branch: git branch -D <branchname>
+   Note: to delete a branch, we must have to be another branch(not in the branch which we about to delete) and -D will be used for unmerged branch
+=> to merge a branch(dev) to branch(master): git merge dev
+   Note: before merging dev branch to master branch, we must have to be in master branch
+=> to delete a branch after the merging: git branch -d <branchname>
+=> to history of merging: git reflog
+=> 
+
+Merging:
+master: M1 -> M2 -> M3 -> M4 (HEAD)
+Feature:         -> F1 -> F2
+
+Merge: M1 -> M2 -> M3 -> M4 -> F1 -> F2 (Merge commit)
+
+Rebasing:
+1) Rebase
+M1 -> M2 -> M3 -> M4 (HEAD)
+Feature: M1 -> M2 -> M3 -> M4 -> F1 -> F2
+2) Merge
+M1 -> M2 -> M3 -> M4 -> F1 -> F2 (master)
+
+Q) How to do rebasing?
+A) In 'master' branch, create a file naming 'master.txt', make two commits by changing the file content and create new branch naming 'feature' and
+checkout. At this step we know that the base is 2nd commit. Then in 'feature' branch, create a file naming 'feature.txt', make two commits by
+changing the file content and checkout to 'master' branch. Again make two commits by changing the file content in 'master' branch and checkout to
+'feature' branch. And then run the cmd 'git log --pretty=oneline' to get the commits history. Run 'git rebase master' which makes the base to the
+latest commit in 'master' branch and run the cmd 'git log --pretty=oneline' again to get the commits history. Checkout to 'master' branch and run
+the cmd 'git merge feature' to merge. With rebasing feature in git, we prevent the conflicts while merging from feature branch to the master branch.
+While doing rebase in feature branch with master branch, we may encounter conflicts which we have to resolve them manually but when we merge the
+feature branch with master branch, we won't get any conflicts which is a benefit because in master branch we may have code changes where we won't
+get any conflicts.
