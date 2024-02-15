@@ -27,7 +27,15 @@
    Note: before merging dev branch to master branch, we must have to be in master branch
 => to delete a branch after the merging: git branch -d <branchname>
 => to history of merging: git reflog
-=> 
+=> to get the linked online repo details: git remote -v
+=> to remove the linked repo from local: git remote remove <name>
+						 Ex: git remote remove origin
+=> to set git user name: git config --global user.name <username>
+=> to set git user email: git config --global user.email <useremail>
+=> to unset git user name: git config --global --unset user.name
+=> to unset git user email: git config --global --unset user.email
+=> If we have more variables for one config we can use: git config --global --unset-all user.name
+									  git config --global --unset-all user.email
 
 Merging:
 master: M1 -> M2 -> M3 -> M4 (HEAD)
