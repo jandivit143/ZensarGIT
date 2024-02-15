@@ -1,0 +1,92 @@
+04/Sep/2023
+11:22 AM
+
+https://www.carbynetech.com/about.html
+
+CRUD using static data: https://www.youtube.com/watch?v=mQcpC_O3Xks
+
+Directives(structural & attribute): Angular directives are used to extend the power of the HTML by giving it new syntax. Directives can extend, change or modify
+the behavior of the DOM elements.
+Types of directives:
+1. component directive
+2. structural directive
+3. attribute directive
+
+SPA(Single Page Application): A SPA is a web application or website that interacts with the user by dynamically rewriting the current web page with new data from the
+web server, instead of the default method of a web browser loading entire new pages. It means whenever client requests anything, the request will be sent in AJAX to
+server and server responses with the raw data(json) instead of html response.
+Benefits: Quick loading time, Seamless user experience as most of the things are happening there at the client side, less network bandwidth.
+
+Lazy Loading:
+
+JWT:
+
+Difference b/w constructor and ngoninit
+Angular lifecycle hooks: constructor, ngOnChanges, ngOnInit, ngDoCheck, ngAfterContentInit, ngAfterContentChecked, ngAfterViewInit, ngAfterViewChecked, ngOnDestroy.
+constructor: It is used to inject the dependencies(like services).
+ngOnChanges: It is invoked every time when there is a change in one of the input properties of the component.
+ngOnInit: It is for the initialization.
+
+Mongodb
+
+NodeJS: Node.js is a popular runtime environment that can be used for building high-scale applications that need to support multiple concurrent requests. Runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.).
+Node.js can generate dynamic page content
+Node.js can create, open, read, write, delete, and close files on the server
+Node.js can collect form data
+Node.js can add, delete, modify data in your database
+
+ExpressJS: Express is a fast, assertive, essential and moderate web framework of Node.js. You can assume express as a layer built on the top of the Node.js that helps
+manage a server and routes. It provides a robust set of features to develop web and mobile applications.
+
+Let's see some of the core features of Express framework:
+
+It can be used to design single-page, multi-page and hybrid web applications.
+It allows to setup middlewares to respond to HTTP Requests.
+It defines a routing table which is used to perform different actions based on HTTP method and URL.
+It allows to dynamically render HTML Pages based on passing arguments to templates.
+
+Angular: Angular is a development platform, built on TypeScript. As a platform, Angular includes:
+A component-based framework for building scalable web applications
+A collection of well-integrated libraries that cover a wide variety of features, including routing, forms management, client-server communication, and more
+
+Introduction:
+The earlier project is based on MEAN stack tech where I mostly worked on UI part using Angular framework along with some business implementations with the node and
+mongoDB as a database storage and I have 1 year 4 months of experience on this tech gained from the previous project.
+
+mongodb comparison operators:
+$eq
+ex: db.students.find({age: {$eq: 5}});
+$ne
+ex: db.students.find({age: {$ne: 5}});
+$lt
+ex: db.students.find({age: {$lt: 5}});
+$gt
+ex: db.students.find({age: {$gt: 5}});
+$lte
+ex: db.students.find({age: {$lte: 5}});
+$gte
+ex: db.students.find({age: {$gte: 10}});
+$in
+ex: db.students.find({age: {$in: [5,11,12]}});
+$nin
+ex: db.students.find({age: {$nin: [5,12]}});
+
+mongodb logical operators:
+$and
+ex: db.students.find({$and: [{age: {$lt: 11}}, {Hobbies: 'Walk'}]});
+$or
+ex: db.students.find({$or: [{age: {$lte: 10}}, {age: {$gte: 12}}]});
+$nor
+ex: db.students.find({$nor: [{age: {$lte: 10}}, {age: {$gte: 12}}]});
+$not
+ex: db.students.find({$and: [{age: {$not: {$lt: 11}}}, {age: {$not: {$gt: 5}}}]});
+
+
+In angular, we need to treat .js file as a Module.
+
+Module: Module is a reusable piece of code that encapsulates implementation details and exposes a public API.
+
+Webpack: Webpack treats everything as a Module. Your css, html, js, fonts, images - module and for every module we need to have a module loader.
+
+.css - style-loader / css-loader
+.html - html loader
