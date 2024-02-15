@@ -1,0 +1,243 @@
+Sprint Boot
+
+Continuous Delivery - It focuses on ensuring software is always release-ready with manual approval.
+
+Continuous Deployment - It automates the release process, deploying changes to production automatically once tests pass.
+
+Splunk - stack of tools, it is not free
+
+29/09/2023 Elastic Stack
+----------------------------------------
+CI/CD jenkins commit
+
+Continuous Monitoring (CM) :- It is the process of real time monitoring of the application & generate its visualization report dynamically. It is
+an integral part of software development. It is used to monitor the health of our application. It is helpful in improvising overall application
+quality.
+Continuous Monitoring Tools - Grafana, Prometheus, elastic stack, splunk, nagios, amazon cloudwatch
+Types of Monitoring:
+1. System performance monitoring
+2. Process monitoring
+3. Integration monitoring
+4. Application performance monitoring
+5. Business activity monitoring
+
+Log Management: It is the practice of continuously gathering, storing, processing and analyzing data from disparate programs and applications in
+order to optimize system performance, identify technical issues, better manage resources, strengthen security and imporve compliance.
+
+ELK Stack
+
+E Elastic Search - It is a distributed, JSON-based search and analytics engine. It runs on the default port 9200.
+	CRUD
+	Ranking
+	Search
+	DSL(Domain Specific Language)
+	Don't have to pay
+	Splunk :- its not free
+
+L Logstash - It is being used for data pipeline.
+
+K Kibana - It gives shape to your data and is the extensible user interface. It is being used for data visualization purpose. It provides a
+dashboard to visualize the data.
+
++
+
+top up
+
+Beats :- Lightweight Data Shippers
+
+cloud
+
+Download elastic search, kibana and logstash
+
+Follow the below steps to initialize and run the tools:
+
+*********************** How to install & start Elastic-search? ***********************
+Download the latest windows zip file from https://www.elastic.co/downloads/elasticsearch
+Extract the zip file at C:\elastic-stack\
+Add below properties inside /config/elasticsearch.yml
+	xpack.security.enabled: true
+	xpack.security.enrollment.enabled: true
+Delete the 'elasticsearch' directory if exists from C:\Users\%USER_ID%\AppData\Local\Temp. This step is run only once i.e. during installation time only.
+cd C:\elastic-stack\elasticsearch-8.8.0\bin
+Run "elasticsearch.bat"
+Wait for few mins so that Elastic search service will be started properly. It will display the generated password for the user 'elastic'. Copy that password & save it in your backup file.
+Now, run "localhost:9200" inside browser.
+Enter username & password as (elastic/generated_password). You should get elastic service details in JSON format inside browser. It completes the Elastic Search installation.
+
+ 
+
+ 
+
+*********************** How to install & start Kibana? ***********************
+Download the latest windows zip file from https://www.elastic.co/downloads/kibana
+Extract the zip file at C:\elastic-stack\
+Edit kibana.yml & uncomment below properties:
+server.port: 5601
+elasticsearch.hosts: ["http://localhost:9200"]
+In order to access Elasticsearch from Kibana, we need to generate service token using elasticsearch service with below command executed on elastic search bin directory.
+elasticsearch-service-tokens create elastic/kibana my-token
+Copy the newly generated token & add it inside kibana.yml as shown below:
+elasticsearch.serviceAccountToken: "paste_generated_token_here"
+Start the Kibana service using kibana.bat file. You need to wait for 3/4 minutes to start the Kibana service first time.
+Now, you can hit localhost:5601 & login with the user 'elastic'. If the login is successful, it means Kibana is installed properly.
+
+ 
+
+ 
+
+*********************** How to install & start Logstash? ***********************
+Download the latest windows zip file from https://www.elastic.co/downloads/logstash
+Extract the zip file at C:\elastic-stack\
+Create a new file config\logstash-sample.conf with below contents.
+input {
+  stdin {
+  }
+}
+output {
+
+ 
+
+  stdout {
+    codec => rubydebug
+  }
+
+ 
+
+  elasticsearch {
+    hosts => ["http://localhost:9200"]
+    index => "bankapp"
+    user => "elastic"
+    password => "your_password"
+  }
+}
+Start the logstash with the command: 'logstash -f ./config/logstash-sample.conf --config.reload.automatic'. You need to wait for few minutes to start the logstash properly.
+
+To reset the password :-  PS D:\Elastic\elasticsearch-8.10.0-windows-x86_64\elasticsearch-8.10.0\bin> .\elasticsearch-reset-password -u elastic .
+
+New value: mMeCf61PX4Rhd=FuUfJS
+
+==========================================================
+
+elastic username: elastic
+elastic password: uJXQQ*gqR08jdsBitvRO
+
+kibana token: AAEAAWVsYXN0aWMva2liYW5hL215LXRva2VuOkhSdG41ODRFU2F5MUUwcVZkOUFRREE
+
+# Click the Variables button, above, to create your own variables.
+// To get the headings of all the columns
+GET _cat/indices?v=true
+
+GET _cat/indices?help
+
+// To get all indices
+GET _cat/indices
+
+// To create the indices
+POST tutorial/_doc/1
+{
+  "title": "explore elastic stack"
+}
+
+POST tutorial/_doc/2
+{
+  "title": "explore kibana"
+}
+
+// To get the tutorial index
+GET tutorial/_search
+
+Day 3
+Kibana CRUD operations
+
+Shard
+Types of Shards: Primary Shard, Replica Shard
+
+Inverted Index
+https://www.youtube.com/watch?v=ajNfOPeWiAY
+
+CURD Operations
+PUT accounts
+
+POST accounts/_doc/1
+{
+  "name": "Ram",
+  "balance": 20000
+}
+
+POST accounts/_doc/2
+{
+  "name": "Laxman",
+  "balance": 20000
+}
+
+DELETE accounts/_doc/2
+
+// To get the schema of the accounts index
+GET accounts/_mapping
+
+// Fetching the accounts whose balance is 30000
+GET accounts/_search
+{
+  "query": {
+    "match":{
+      "balance": 30000
+    }
+  }
+}
+
+// Using greater than operator
+GET accounts/_search
+{
+  "query": {
+    "range": {
+      "balance": {
+        "gt": 12000
+      }
+    }
+  }
+}
+
+// Using wildcards
+GET accounts/_search
+{
+  "query": {
+    "wildcard": {
+      "name":{
+        "value": "Ar*",
+        "case_insensitive": true
+      }
+    }
+  }
+}
+
+GET accounts/_search
+
+// To find a particular document through postman or thunder client from elasticsearch, use POST method with 'http://localhost:9200/products/_search' and pass the query to the body
+like
+{
+	"query": {
+		"match": {
+			"id": 1
+		}
+	}
+}
+
+Notes:
+Add before starting elasticsearch in elasticsearch.yml file
+	xpack.security.enabled: true
+	xpack.security.enrollment.enabled: true
+
+To start the elasticsearch, go to the bin directory of elasticsearch and run the cmd: elasticsearch.bat
+
+To generate service token using elasticsearch service
+	elasticsearch-service-tokens create elastic/kibana my-token
+
+Add before starting kibana in kibana.yml file
+	elasticsearch.serviceAccountToken: "AAEAAWVsYXN0aWMva2liYW5hL215LXRva2VuOkhSdG41ODRFU2F5MUUwcVZkOUFRREE"
+and uncomment the lines
+	server.port: 5601
+	elasticsearch.hosts: ["http://localhost:9200"]
+
+To start the kibana, go to the bin directory of kibana and run the cmd: kibana.bat
+
+I'm the person who believe in commitment and make a better decision with the prospect of job. With the experience I have, I seek for new challenges which makes to improve my technological skills in IT field. I have came up with many co-curricular activities which took to get my inside talent where i have participated in.
