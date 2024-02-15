@@ -1,0 +1,35 @@
+SR for bajaj motor insurance premium price difference: 14153571
+
+FY24 Internal DAP_Java FS Phase -3 Docker_Git_Jenkins_AWS_Assessment-December-2023
+
+state management in angular
+
+standalone components angular 15
+https://www.youtube.com/watch?v=c5f8Y2fzZM0
+
+https://aws.amazon.com/console/
+https://aws.amazon.com/about-aws/global-infrastructure/
+
+AWS foundation:
+https://rpg.percipio.com/channels/d3612955-58bf-4e9b-983d-7b08696177df?tab=WATCH
+
+32817885811
+https://www.bluedart.com/web/guest/trackdartresult
+32834627792
+
+Best of arijit singh
+https://www.youtube.com/watch?v=Qdv2YG9nOsY
+
+"start": "ng serve --host 0.0.0.0 --port 9090 --disable-host-check"
+
+best way to find & update elements in array
+https://www.youtube.com/watch?v=cj7sMpKXOnA
+
+https://www.youtube.com/watch?v=rKNSc8RrwxA&list=PL6XT0grm_TfgtwtwUit305qS-HhDvb4du
+
+scaler aws
+https://www.youtube.com/watch?v=B8i49C8fC3E
+
+What is Cloud Computing?
+Cloud Computing is the on-demand delivery of IT resources over the internet with pay-as-you-go pricing. Instead of buying, owning and maintaining
+physical data centers and servers, you can access technology services, such as computing power, storage, and databases.

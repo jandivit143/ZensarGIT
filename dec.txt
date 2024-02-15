@@ -1,0 +1,72 @@
+Node DAP started on 30th August 2023.
+
+I am Abhijith. I'm Hyderabad. I am a MEAN Stack developer. I've been developing for about one and half years now. I started my journey into the tech world by working as
+the frontend developer. I started . I was responsible for building .
+
+what is agile: Agile project management is an iterative approach to managing software development projects that focuses on continuous releases and customer feedback.
+
+difference between localstorage and sessionstorage
+
+hoisting: Hoisting does in javascript is essentially takes some of your code and it moves it to the very top of your file automatically.
+
+call bind apply
+
+lazy loading: Lazy loading helps keep initial bundle sizes smaller, which in turn helps decrease load times.
+
+SPA(single page application): A single page application is a web application or website that interacts with the user by dynamically rewriting the current web page with
+new data from the web server, instead of the default method of a web browser loading entire new pages.
+
+what is angular? Angular is a typescript based framework made by google in 2016. This framework is used for creating professional and modern user interfaces. As I said
+Angular is typescript based framework, typescript is a superset of javascript which allows us to improve the productivity. Angular uses component-based architecture
+which at its core is just sectioning off parts of a large project into logical smaller functional pieces that can be used and reused in other parts of the application.
+
+Typescript: Typescript is a superset of javascript which allows us to improve the productivity. The advantage of using typescript in angular is that it has the ability
+to maintain the efficiency in our programs.
+
+What is a framework? A framework is a platform that provides a foundation for developing software application which gives us building blocks like forms, routers, etc.
+
+object cloning
+
+remove array and object duplicate elements
+
+what is non-blocking I/O?
+Blocking refers to operations that block further execution until that operation finishes. Non-blocking refers to code that doesn't block execution.
+https://stackoverflow.com/questions/10570246/what-is-non-blocking-or-asynchronous-i-o-in-node-js
+
+async await, promises, callbacks
+
+event loop
+The event loop is a constantly running process that monitors both the callback queue and the call stack.
+
+what is express?
+Express is a Node.js web framework designed for building APIs, web applications and cross-platform mobile apps. It performs fast, unopinionated and lightweight. It is
+used as a server-side scripting language. It is a request handler, which have the access to the application's request-response cycle. It is responsible to how an
+application's endpoint respond to client requests.
+Node.js is a javascript run-time environment that is fast, but it does not support request handling, HTTP methods or serving files, so this is where express js comes
+into the picture.
+
+directives: Angular directives are functions that are executed when they found on the DOM by the Angular compiler.
+
+pipes: Pipes are basically useful to transform the data from one format to another format.
+
+observable: we use observables to perfom asynchronous operations and handle asynchronous data. Observable sends the data in chucks instead of sending all the data at
+once like promise.
+
+Input
+
+Output
+
+babel: Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or
+environments.
+
+webpack: Webpack is a static module bundler for JavaScript applications — it takes all the code from your application and makes it usable in a web browser.
+Modules are reusable chunks of code built from your app's JavaScript, node_modules, images, and the CSS styles which are packaged to be easily used in your website.
+
+hobbies
+
+strengths
+I am very collaborative. I’ve always enjoyed working on teams and it is one of my strongest attributes.
+My positive attitude is also definitely one of my strengths.
+
+weaknesses
+I am naturally a shy person. Since I was a kid, I have always felt nervous presenting in front of the class, and that translated into the workplace.
